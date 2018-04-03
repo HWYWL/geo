@@ -109,15 +109,36 @@
         }else {
             System.out.println("无此数据");
         }
+    }
 
+    /**
+     * 通过ip获得位置信息
+     */
+    @Test
+    public void testPlaceName8(){
+        String s = IP2Location.ip2Location("119.130.230.20");
+
+        System.out.println(s);
+    }
+
+    /**
+     * 通过两个ip获得位置大概的距离
+     */
+    @Test
+    public void testPlaceName9(){
+        String ip1 = "119.130.230.20";
+        String ip2 = "119.120.230.20";
+        double distance = IP2Location.ip2Location(ip1, ip2);
+
+        System.out.println(IP2Location.ip2Location(ip1) + " 距离 " + IP2Location.ip2Location(ip2) + ": " + distance / 1000.0 + "千米");
     }
 ```
 
 ### 执行结果
-![](https://i.imgur.com/2IOq4Qt.jpg)
+![](https://i.imgur.com/HctxHqu.jpg)
 
 ### 性能
-![](https://i.imgur.com/us6EJVm.jpg)
+![](https://i.imgur.com/8ypQ38s.jpg)
 
 - 第一次执行时会比较慢，在初始化之后访问都在4ms以下
 
