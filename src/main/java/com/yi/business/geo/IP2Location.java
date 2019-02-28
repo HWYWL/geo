@@ -12,12 +12,14 @@ import java.util.Map;
 
 /**
  * 通过新浪的接口获得ip所在的位置
+ *
  * @author YI
  * @date 2018-4-3 15:11:24
  */
 public class IP2Location {
     /**
      * 通过ip获得位置信息
+     *
      * @param ip
      * @return
      */
@@ -41,7 +43,8 @@ public class IP2Location {
 
         String json = result.substring(result.indexOf("=") + 1, result.length() - 1);
 
-        Map<String, String> map = gson.fromJson(json, new TypeToken<Map<String, String>>() {}.getType());
+        Map<String, String> map = gson.fromJson(json, new TypeToken<Map<String, String>>() {
+        }.getType());
 
         StringBuilder location = new StringBuilder();
         if (map.get("country") != null) {
@@ -57,7 +60,7 @@ public class IP2Location {
         return location.toString();
     }
 
-    public static double ip2Location(String ip1, String ip2){
+    public static double ip2Location(String ip1, String ip2) {
         String ip1geo = ip2Location(ip1);
         String ip2geo = ip2Location(ip2);
 
