@@ -95,8 +95,8 @@ public class TestPlace {
      */
     @Test
     public void testPlaceName7(){
-        String placeStart = "翁源县";
-        String placeEnd = "广东广州天河区顺盈商业大厦";
+        String placeStart = "上海";
+        String placeEnd = "武汉";
         double distance = TermRelationTreeCoordinate.GetDistance(placeStart, placeEnd);
         if (distance != -1){
             System.out.println(placeStart + " 距离 " + placeEnd + distance / 1000.0 + "千米");
