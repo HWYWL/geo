@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: cn.hutool:hutool-all
+    versions:
+    - 5.5.8
+    - 5.5.9
+    - 5.6.0
+    - 5.6.1
+    - 5.6.2
